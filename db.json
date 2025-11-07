@@ -1,0 +1,20 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Áo thun",
+            "price": 120000,
+            "categoryId": 1,
+            "description": "Chất liệu cotton",
+            "thumbnail": "https://example.com/ao-thun.jpg",
+            "stock": 20
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "title": "Thời trang",
+            "slug": "thoi-trang"
+        }
+    ]
+}
