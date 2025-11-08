@@ -4,7 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginAuth, registerAuth } from "../../api/authApi";
 import toast from "react-hot-toast";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const registerSchema = z
   .object({
@@ -40,7 +40,9 @@ const AuthForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      await (login ? loginAuth(data) : registerAuth(data));
+      await (login
+        ? loginAuth(data)
+        : registerAuth({ ...data, role: "client" }));
       toast.success(`${login ? "Login" : "Register"} successful`);
       reset();
       nav(login ? "/" : "/login");
